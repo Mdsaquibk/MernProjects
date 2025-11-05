@@ -480,6 +480,19 @@ console.log("welcome to node.js");
 // * * 
 // *
 
+//? wrong o/p check
+// const n=5
+// for(let i=1;i<=2*n;i++){
+//         let row=""
+//         for(let j=1;j<=n;j++){
+//                 if((i>=j) && (i+j<=2*n)){
+//                         row+="* "
+//                 }
+//         }
+//         console.log(row);
+// }
+
+
 // ? T.P-30
 //         *
 //       * *
@@ -490,6 +503,20 @@ console.log("welcome to node.js");
 //     * * *
 //       * *
 //         *
+
+// const n=5
+// for(let i=1;i<2*n;i++){
+//         let row=""
+//         for(let j=1;j<=n;j++){
+//                 if((i<=n && i+j>=n+1 ) || (i>n && i-j<n)){
+//                         row+="* "
+//                 }
+//                 else{
+//                         row+="  "
+//                 }
+//         }
+//         console.log(row)
+// }
 
 // ?T.P-31
 //           *
@@ -508,12 +535,209 @@ console.log("welcome to node.js");
 
 // ? T.P -33
 
-        *
-//       * *
-//     * * *
-//   * * * *
+//         * 
+//       * * * 
+//     * * * * * 
+//   * * * * * * * 
+// * * * * * * * * * 
+//   * * * * * * * 
+//     * * * * * 
+//       * * * 
+//         * 
+
+// T.P -34
+
+// *                 *
+// * *             * *
+// * * *         * * *
+// * * * *     * * * *
+// * * * * * * * * * *
+// * * * *     * * * *
+// * * *         * * *
+// * *             * *
+// *                 *
+
+// T.P-35
+
+
 // * * * * *
-//   * * * *
-//     * * *
-//       * *
-//         *
+// *   *   *
+// *   *   *
+// *   *   *
+// * * * * *
+// *   *   *
+// *   *   *
+// *   *   *
+// * * * * *
+
+//? 03-11-25
+
+// T.P-36
+
+// *
+// * *
+// *   *
+// *     *
+// * * * * *
+
+// let n = 5; 
+
+// for (let i = 1; i <= n; i++) {
+//   let row = "";
+//   for (let j = 1; j <= i; j++) {
+//     if (j === 1 || j === i || i === n) {
+//       row += "* ";
+//     } else {
+//       row += "  "; 
+//     }
+//   }
+//   console.log(row);
+// }
+
+//*  hollow pyramid
+
+// const n=5
+//  for(let i=1;i<=n*2;i++){
+//     let row=""
+//     for(let j=1;j<=n;j++){
+//         if(j==1 || (j==i && i<=n) ||  i+j==2*n ){
+//             row+="* "
+//         }
+//         else{
+//             row+="  "
+//         }
+//     }
+//     console.log(row)
+//?  } wr
+
+// ? 04-11-25
+
+// T.P-37
+
+//*  hollow pyramid
+
+// i+j=n+1 || i-j=n-1
+// i+j=n+1 || j-i=n-1
+
+// const n=5 
+// for(let i=1;i<=2n;i++){
+//     let row=""
+//     for(let j=1;j<=n;j++){
+//         if(i+j==n+1 || i-j==n-1){
+//             row+="* "
+//         }
+//         else{
+//             row+="  "
+//         }
+//     }
+//     console.log(row)
+//?  } er
+
+// * inverted pyramid
+
+// const n=5
+//  for(let i=1;i<=n*2;i++){
+//     row=""
+//     for(let j=1;j<=n;j++){
+//         if((i==j && j<=n) || i==1 || i+j==2*n){
+//             row+="* "
+//         }
+//         else{
+//             row+=" "
+//         }
+//     }
+//     console.log(row)
+//?  } er
+
+
+// alphabet pattern * diamond hollow pattern
+
+
+//     *    
+//    ***   
+//   *****  
+//  ******* 
+// *********
+//  ******* 
+//   *****  
+//    ***   
+//     *    
+
+
+// let n = 5;
+
+// for (let i = 1; i <= n; i++) {
+//   let line = "";
+
+//   for (let j = i; j < n; j++) {
+//     line += " ";
+//   }
+
+//   for (let j = 1; j <= (2 * i - 1); j++) {
+//     line += "*";
+//   }
+
+//   console.log(line);
+// }
+
+// for (let i = n - 1; i >= 1; i--) {
+//   let line = "";
+
+//   for (let j = n; j > i; j--) {
+//     line += " ";
+//   }
+
+//   for (let j = 1; j <= (2 * i - 1); j++) {
+//     line += "*";
+//   }
+
+//   console.log(line);
+// }
+
+//     *    
+//    * *   
+//   *   *  
+//  *     * 
+// *       *
+//  *     * 
+//   *   *  
+//    * *   
+//     *    
+
+// let n = 5; 
+
+// for (let i = 1; i <= n; i++) {
+//   let line = "";
+
+//   for (let j = i; j < n; j++) {
+//     line += " ";
+//   }
+
+//   for (let j = 1; j <= (2 * i - 1); j++) {
+//     if (j === 1 || j === (2 * i - 1)) {
+//       line += "*"; 
+//     } else {
+//       line += " "; 
+//     }
+//   }
+
+//   console.log(line);
+// }
+
+// for (let i = n - 1; i >= 1; i--) {
+//   let line = "";
+
+//   for (let j = n; j > i; j--) {
+//     line += " ";
+//   }
+
+//   for (let j = 1; j <= (2 * i - 1); j++) {
+//     if (j === 1 || j === (2 * i - 1)) {
+//       line += "*"; 
+//     } else {
+//       line += " "; 
+//     }
+//   }
+
+//   console.log(line);
+// }
