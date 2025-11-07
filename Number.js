@@ -361,3 +361,7 @@ function first_last_digit() {
   return console.log(fd, " first digit", ld, "last digit");
 }
 // first_last_digit();
+
+// * T.P - W.A.J.P to extract only even digits from a given number
+// * T.P W.A.J.P to sum of the first and last digit of a given number
+// * T.P W.A.J.P to get the sum of digits present between 1st adn last digit ip:1447 op:44
