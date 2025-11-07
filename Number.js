@@ -284,9 +284,80 @@ function sum_ofDigits(n) {
   return sum;
 }
 
-console.log(sum_ofDigits(134));
+// console.log(sum_ofDigits(134));
 
-// *T.P-20 W.A.J.P to reverse a number without using reverse method 
+// *T.P-20 W.A.J.P to reverse a number without using reverse method
+
 // *T.P-21 W.A.J.P to check a given no is a  pallindrome or not (without using inbuilt methods)
 // *TP-22 W.A.J.P  to print the sum of square of each digit ip : 135 op:1**2+3**2+5**2 = 1+9+25 =35
 
+function reverseNum(n) {
+  let reverse = 0;
+  while (n > 0) {
+    reverse = reverse + (n % 10);
+    n = Math.floor(n / 10);
+  }
+  return console.log(reverse);
+}
+// reverseNum(153) // error
+
+function isPallind(n) {
+  let dummy = n;
+  let reverse = 0;
+  while (n > 0) {
+    reverse = reverse * 10  + (n % 10);
+    n = Math.floor(n / 10);
+  }
+  if (dummy === reverse) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+  // console.log(isPallind(121))
+
+function revSqSum(n) {
+  let sum = 0;
+  let reverse = 0;
+  while (n > 0) {
+    sum = sum + (n % 10) ** 2;
+    n = Math.floor(n / 10);
+  }
+  return console.log(sum);
+}
+
+// revSqSum(12);
+// ? 07-11-2025
+
+// * W.A.J.P  to count how many zeros are present inside a given number  if it has one zero we need to return 1, if it has no zeros , invalid input
+
+function checkZeros() {
+  let num = 254006,
+    digit = 0,
+    count = 0;
+  while (num > 0) {
+    digit = num % 10;
+    if (digit === 0) {
+      count++;
+    }
+    num = Math.floor(num / 10);
+  }
+  console.log(count, "zeros are present");
+}
+// checkZeros();
+
+// * W.A.J.P to find first digit and last digit of a number
+
+function first_last_digit() {
+  let num = 1457,
+    ld = num % 10,
+    fd = 0;
+  while (num >=10) {
+    num = Math.floor(num / 10);
+  }
+  fd = num;
+
+  return console.log(fd, " first digit", ld, "last digit");
+}
+// first_last_digit();
