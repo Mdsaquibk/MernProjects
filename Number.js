@@ -1,4 +1,4 @@
-console.log("number");
+console.log("number programs");
 
 //*P.1- W.A.Js.Fn. to check a given number is a +ve num or -ve num. if the number is +ve , return this num is +ve num , else return this num is a -ve num note: if the num is 0 , return 0
 
@@ -530,8 +530,8 @@ function armstrongNum(n) {
   return sum === n ? `${n} is an Armstrong number` : `${n} is not an Armstrong number`;
 }
 
-console.log(armstrongNum(153));
-console.log(armstrongNum(123));
+// console.log(armstrongNum(153));
+// console.log(armstrongNum(123));
 
 // ?TASK
 
@@ -578,11 +578,11 @@ function isStrongNumber(num) {
 // }
 
 let number = 145;
-if (isStrongNumber(number)) {
-  console.log(`${number} is a Strong Number.`);
-} else {
-  console.log(`${number} is NOT a Strong Number.`);
-}
+// if (isStrongNumber(number)) {
+//   console.log(`${number} is a Strong Number.`);
+// } else {
+//   console.log(`${number} is NOT a Strong Number.`);
+// }
 
 // * -------------- * *  * *   *  *   * ---------------------
 // function factorial(n) {
@@ -611,14 +611,14 @@ function isStrongNumber(num) {
 
 // let number = 145;
 
-if (isStrongNumber(number)) {
-  console.log(number + " is a Strong Number.");
-} else {
-  console.log(number + " is NOT a Strong Number.");
-}
+// if (isStrongNumber(number)) {
+//   console.log(number + " is a Strong Number.");
+// } else {
+//   console.log(number + " is NOT a Strong Number.");
+// }
 
 
-//* T.P-31 ip:28 perfect num explanation:1+2+4+7+14=28 op:perfect num
+//* T.P-31 ip:28 perfect num explanation:1+2+4+7+14(sum of all the factors except the original number)=28  op:perfect num
 
 function isPerfectNumber(num) {
   let sum = 0;
@@ -634,11 +634,11 @@ function isPerfectNumber(num) {
 
 // let number = 28;
 
-if (isPerfectNumber(number)) {
-  console.log(number + " is a Perfect Number.");
-} else {
-  console.log(number + " is NOT a Perfect Number.");
-}
+// if (isPerfectNumber(number)) {
+//   console.log(number + " is a Perfect Number.");
+// } else {
+//   console.log(number + " is NOT a Perfect Number.");
+// }
 
 
 
@@ -659,13 +659,13 @@ function isNeonNumber(num) {
 
 // let number = 9;
 
-if (isNeonNumber(number)) {
-  console.log(number + " is a Neon Number.");
-} else {
-  console.log(number + " is NOT a Neon Number.");
-}
+// if (isNeonNumber(number)) {
+//   console.log(number + " is a Neon Number.");
+// } else {
+//   console.log(number + " is NOT a Neon Number.");
+// }
 
-// ?10-11-25
+// ?10-NOV-25
 
 // *Repeat P-28 Armstrong number
 
@@ -692,5 +692,37 @@ const isArmstrong=(x)=>{
   }
 }
 
-console.log(isArmstrong(153))
+// console.log(isArmstrong(153))
 
+
+//* Repeat T.P-31 ip:28 perfect num explanation:1+2+4+7+14(sum of all the factors except the original number)=28  op:perfect num
+
+const isPerfect=(n)=>{
+  let org=n , fact=[1]
+  for(let i=2;i<=Math.floor(n/2);i++){
+    if(n%i===0){
+      fact.push(i)
+    }
+  }
+  let sum= fact.reduce((acc,ele)=>acc+ele)
+  return sum===org
+}
+// console.log(isPerfect(28))
+
+//*Repeat T.P-32 Neon number : ip:9 exp:9**2 =81=8+1=9 op:neon number
+
+function sumofDigits(n){
+  let sum=0
+  while(n>0){
+    sum+= (n%10)
+    n=Math.floor(n/10)
+  }
+  return sum
+}
+
+function isNeon(n){
+
+  let square=n**2 , result=sumofDigits(square)
+  return n===result
+}
+console.log(isNeon(9))
