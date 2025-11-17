@@ -1,3 +1,4 @@
+
 console.log("number programs");
 
 //*P.1- W.A.Js.Fn. to check a given number is a +ve num or -ve num. if the number is +ve , return this num is +ve num , else return this num is a -ve num note: if the num is 0 , return 0
@@ -32,14 +33,12 @@ function checkDigit(n) {
 
 // * P-3 W.A.J.P to check a given no is even or odd
 
-function evenOdd(x){
-
-    if(x%2==0){
-        return `${x} is a even no`
-    }
-    else{
-                return `${x} is a odd no`
-    }
+function evenOdd(x) {
+  if (x % 2 == 0) {
+    return `${x} is a even no`;
+  } else {
+    return `${x} is a odd no`;
+  }
 }
 // console.log(evenOdd(9))
 
@@ -53,14 +52,12 @@ function isPallindrome(P) {
 
 // * P-5 W.A.J.P to check a given number is divisible by 5 or not
 
-function divbyfive(x){
-
-    if(x%5==0){
-        return `${x} is divisible by 5`
-    }
-    else{
-                return `${x} is not  divisible by 5`
-    }
+function divbyfive(x) {
+  if (x % 5 == 0) {
+    return `${x} is divisible by 5`;
+  } else {
+    return `${x} is not  divisible by 5`;
+  }
 }
 // console.log(divbyfive(10))
 
@@ -527,7 +524,9 @@ function armstrongNum(n) {
 
   for (let t = n; t > 0; t = Math.floor(t / 10)) sum += (t % 10) ** count;
 
-  return sum === n ? `${n} is an Armstrong number` : `${n} is not an Armstrong number`;
+  return sum === n
+    ? `${n} is an Armstrong number`
+    : `${n} is not an Armstrong number`;
 }
 
 // console.log(armstrongNum(153));
@@ -556,15 +555,13 @@ function armstrongNum(n) {
 //   }
 // }
 
-
-
 //* T.P-30 Strong number ip:145 op:strong num explanation: 1!+4!+5!=145
 
 function isStrongNumber(num) {
-  let digits = num.toString().split('');
-  
+  let digits = num.toString().split("");
+
   let sum = digits.reduce((acc, d) => acc + factorial(Number(d)), 0);
-  
+
   return sum === num;
 }
 
@@ -593,7 +590,6 @@ let number = 145;
 //   return fact;
 // }
 
-
 function isStrongNumber(num) {
   let original = num;
   let sum = 0;
@@ -617,7 +613,6 @@ function isStrongNumber(num) {
 //   console.log(number + " is NOT a Strong Number.");
 // }
 
-
 //* T.P-31 ip:28 perfect num explanation:1+2+4+7+14(sum of all the factors except the original number)=28  op:perfect num
 
 function isPerfectNumber(num) {
@@ -640,14 +635,12 @@ function isPerfectNumber(num) {
 //   console.log(number + " is NOT a Perfect Number.");
 // }
 
-
-
 //* T.P-32 Neon number : ip:9 exp:9**2 =81=8+1=9 op:neon number
 
 function isNeonNumber(num) {
   let square = num * num;
   let sum = 0;
-  
+
   while (square > 0) {
     let digit = square % 10;
     sum += digit;
@@ -669,60 +662,177 @@ function isNeonNumber(num) {
 
 // *Repeat P-28 Armstrong number
 
-function find_digits(n){
-  let digit=0
-  while(n>0){
-    digit++
-    n=Math.floor(n/10)
+function find_digits(n) {
+  let digit = 0;
+  while (n > 0) {
+    digit++;
+    n = Math.floor(n / 10);
   }
-  return digit
+  return digit;
 }
 
-const isArmstrong=(x)=>{
-  let dummy=x, digit=find_digits(x),sum=0
-  while(x>0){
-    sum+=(x%10) ** digit
-    x=Math.floor(x/10)
+const isArmstrong = (x) => {
+  let dummy = x,
+    digit = find_digits(x),
+    sum = 0;
+  while (x > 0) {
+    sum += (x % 10) ** digit;
+    x = Math.floor(x / 10);
   }
-  if(dummy=sum){
-    return true
+  if ((dummy = sum)) {
+    return true;
+  } else {
+    return false;
   }
-  else{
-    return false
-  }
-}
+};
 
 // console.log(isArmstrong(153))
 
-
 //* Repeat T.P-31 ip:28 perfect num explanation:1+2+4+7+14(sum of all the factors except the original number)=28  op:perfect num
 
-const isPerfect=(n)=>{
-  let org=n , fact=[1]
-  for(let i=2;i<=Math.floor(n/2);i++){
-    if(n%i===0){
-      fact.push(i)
+const isPerfect = (n) => {
+  let org = n,
+    fact = [1];
+  for (let i = 2; i <= Math.floor(n / 2); i++) {
+    if (n % i === 0) {
+      fact.push(i);
     }
   }
-  let sum= fact.reduce((acc,ele)=>acc+ele)
-  return sum===org
-}
+  let sum = fact.reduce((acc, ele) => acc + ele);
+  return sum === org;
+};
 // console.log(isPerfect(28))
 
 //*Repeat T.P-32 Neon number : ip:9 exp:9**2 =81=8+1=9 op:neon number
 
-function sumofDigits(n){
-  let sum=0
+function sumofDigits(n) {
+  let sum = 0;
+  while (n > 0) {
+    sum += n % 10;
+    n = Math.floor(n / 10);
+  }
+  return sum;
+}
+
+function isNeon(n) {
+  let square = n ** 2,
+    result = sumofDigits(square);
+  return n === result;
+}
+// console.log(isNeon(9))
+// * T.P-33 Automorphic number ip:76 op:automorphic number exp:76^2 =5776 (ends with 76) num whose sq end with the same number
+//? 11-NOV-2025
+
+// ! using inbuilt methods
+
+function isAutomorphic() {
+  let n = String(76);
+  let square = String(76 ** 2);
+  return square.endsWith(n);
+}
+// console.log(isAutomorphic())
+
+function isautomorphic() {
+  let n = 82;
+  let sq = n ** 2;
+  while (n > 0) {
+    if (n % 10 !== sq % 10) {
+      return false;
+    }
+    n = Math.floor(n / 10);
+    sq = Math.floor(sq / 10);
+  }
+}
+// console.log(isautomorphic())
+
+// * T.P-34 SPY NUMBER IP:1124 EXP: SUM=8 PROD=8 SUM OF ITS DIGITS EQ THE PROD OF ITS DIGITS
+
+// * T.P-35 DISARIUM NUMBER  IP:135 EXP:1^1+3^2+4^3=135
+
+function isDisarium(n) {
+  let numbers = String(n).split("");
+  let sum = numbers.reduce((acc, ele, i) => {
+    return (acc = acc + ele ** (i + 1)); //implicit tye conversion is happening string to number
+  }, 0);
+  return sum === n;
+}
+// console.log(isDisarium(135));
+
+// without inbuilt methods
+
+function countDigit(n){
+  let count=0
   while(n>0){
-    sum+= (n%10)
+    count++
     n=Math.floor(n/10)
   }
-  return sum
+  return count
 }
 
-function isNeon(n){
-
-  let square=n**2 , result=sumofDigits(square)
-  return n===result
+function Disarium(n){
+  let temp=n, digits=countDigit(n),sum=0
+  while(temp>0){
+    sum=sum + (temp%10) ** digits
+    digits--
+    temp=Math.floor(temp/10)
+  }
+  return sum ===n
 }
-console.log(isNeon(9))
+// console.log(Disarium(135))
+
+// * T.P-36 Harshad number/Niven number ip:18 exp: 1+8=9 , 18/9=0
+
+function isHarshad(n) {
+  const digits = String(n).split("").map(Number);
+  const sum = digits.reduce((acc, digit) => acc + digit, 0);
+  return n % sum === 0;
+}
+
+// console.log(isHarshad(18)); 
+// console.log(isHarshad(19)); //true
+// console.log(isHarshad(21)); 
+// console.log(isHarshad(81));   //true
+
+
+// * T.P-37 Happy number ip:19
+
+function isHappy_num(n){
+  let num=n,result={}
+  while (n!==1 && !result[num]) {
+    let sum=0,temp=num 
+    result[num]=true
+    while(temp>0){
+      sum+=(temp%10)**2
+      temp=Math.floor(temp/10)
+    }
+    num=sum
+  }
+  return num===1
+}
+// console.log(isHappy_num(19))
+
+// * T.P-38 DUCK NUMBER ip:507 op:true ip:0123 op:false  num contains zeros not at the beggining
+
+ 
+//* T.P-39 given  number , function need to return a binary number  0:0 1:1 2:10 3:11 4:100
+
+// ? 13-NOV-2025
+
+function binaryNum(k){
+  let res=""
+while(k>0){
+  res= (k%2) +res
+  // console.log(res)
+  k=Math.floor(k/2)
+}
+return res
+}
+// console.log(binaryNum(9))
+// console.log(binaryNum(10))
+
+function toBinary(){
+  let bin=""
+  bin=(9).toString(2)
+  return bin
+}
+console.log(toBinary())
